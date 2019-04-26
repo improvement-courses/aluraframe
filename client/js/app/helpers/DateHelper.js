@@ -4,12 +4,12 @@ class DateHelper {
     throw new Error('Esta classe não pode ser instânciada!');
   }
 
-  static dataParaTexto(data) {
-    return `${ data.getDate() }/${ data.getMonth() + 1 }/${ data.getFullYear() }`;
+  static dateForText(date) {
+    return `${ date.getDate() }/${ date.getMonth() + 1 }/${ date.getFullYear() }`;
   }
 
-  static textoParaData(texto) {
-    if (!/\d{4}-\d{2}-\d{2}/.test(texto)) throw new Error('Deve ser no formato aaaa-MM-dd');
-    return new Date(texto.split('-').map((item, index) => item - index % 2));
+  static textForDate(text) {
+    if (!/\d{4}-\d{2}-\d{2}/.test(text)) throw new Error('Deve ser no formato aaaa-MM-dd');
+    return new Date(text.split('-').map((item, index) => item - index % 2));
   } 
 }
